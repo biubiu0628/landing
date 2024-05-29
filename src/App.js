@@ -1,51 +1,24 @@
 import "./App.css";
-// import Trang1 from "./conponents/Trang1";
-import Trang2 from "./conponents/Trang2";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Trang1 from "./components/Trang1";
+import Trang2 from "./components/Trang2";
+import Trang3 from "./components/Trang3";
+import Trang4 from "./components/Trang4";
+import Thanks from "./components/Thanks";
 
 function App() {
   return (
-    <div className="bg-[#EEF5FF] h-screen flex justify-center items-center">
+    <div className="bg-[#EEF5FF] h-screen flex justify-center items-center font-Ubuntu-regular">
       <div className="bg-white flex p-4 rounded-xl w-[1000px]">
-        <div className="bg-[url('images/bg-sidebar-desktop.svg')] h-[568px] w-[274px] text-white p-8 flex flex-col gap-6">
-          <div className="flex items-center gap-4">
-            <button className="rounded-full bg-transparent w-10 h-10 border-solid border-[1px] border-white">
-              1
-            </button>
-            <div>
-              <p className="font-thin">STEP 1</p>
-              <p className="font-semibold">YOUR INFO</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="rounded-full bg-transparent w-10 h-10 border-solid border-[1px] border-white">
-              2
-            </button>
-            <div>
-              <p className="font-thin">STEP 2</p>
-              <p className="font-semibold">SELECT PLAN</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="rounded-full bg-transparent w-10 h-10  border-solid border-[1px] border-white">
-              3
-            </button>
-            <div>
-              <p className="font-thin">STEP 3</p>
-              <p className="font-semibold">ADD-ONS</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="rounded-full bg-transparent w-10 h-10  border-solid border-[1px] border-white">
-              4
-            </button>
-            <div>
-              <p className="font-thin">STEP 4</p>
-              <p className="font-semibold">SUNMARY</p>
-            </div>
-          </div>
-        </div>
-        {/* <Trang1 /> */}
-        <Trang2 />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Trang1 />} />
+            <Route path="/2" element={<Trang2 />} />
+            <Route path="/3" element={<Trang3 />} />
+            <Route path="/4" element={<Trang4 />} />
+            <Route path="/thank" element={<Thanks />} />
+          </Routes>
+        </Router>
       </div>
     </div>
   );
